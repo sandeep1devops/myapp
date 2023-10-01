@@ -16,19 +16,9 @@ pipeline {
                 sh "mvn package"
             }
         }
-         stage('--verify--') {
+         stage('--deploy--') {
             steps {
-                sh "mvn verify"
-            }
-        }
-            stage('--validate--') {
-            steps {
-                sh "mvn validate"
-            }
-        }
-            stage('--compile--') {
-            steps {
-                sh "mvn compile"
+                sh "mvn deploy"
             }
         }
     }
